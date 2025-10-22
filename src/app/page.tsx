@@ -19,7 +19,6 @@ import { DEFAULT_LOCATION } from '@/lib/constants';
 import { AlertCircle } from 'lucide-react';
 
 export default function Home() {
-  const [selectedLocation, setSelectedLocation] = useState<Location>(DEFAULT_LOCATION);
   const [currentWeather, setCurrentWeather] = useState<CurrentWeatherType | null>(null);
   const [weeklyForecast, setWeeklyForecast] = useState<ForecastItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -55,7 +54,6 @@ export default function Home() {
 
   // 지역 선택 핸들러
   const handleLocationSelect = (location: Location) => {
-    setSelectedLocation(location);
     loadWeatherData(location);
   };
 
